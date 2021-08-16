@@ -1,4 +1,4 @@
-package br.com.api.crud.dto
+package br.com.api.crud.domain.dto
 
 import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.NotNull
@@ -8,7 +8,6 @@ data class ProductPostDtoRequest(
     @field:NotEmpty(message = "Description cannot be empty")
     @field:Size(min = 5, max = 100)
     val description: String,
-
-    @field:NotNull(message = "IdAddress cannot be null")
-    val idAddress: Long
+    val quantity: Int?,
+    val locationId: Long?
 )

@@ -1,11 +1,13 @@
-package br.com.api.crud.exceptions
+package br.com.api.crud.domain.exceptions
 
-import br.com.api.crud.dto.ErrorDto
+import br.com.api.crud.domain.dto.ErrorDto
 import org.springframework.http.HttpStatus
+import org.springframework.orm.jpa.JpaSystemException
 import org.springframework.web.bind.MethodArgumentNotValidException
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestControllerAdvice
+import org.springframework.web.client.HttpServerErrorException
 import javax.servlet.http.HttpServletRequest
 
 @RestControllerAdvice
@@ -28,7 +30,7 @@ class ExceptionHandler {
     @ExceptionHandler(Exception::class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     fun handleServerError(
-        exception: NotFoundException,
+        exception: HttpServerErrorException.InternalServerError,
         request: HttpServletRequest
     ): ErrorDto {
         return ErrorDto(
