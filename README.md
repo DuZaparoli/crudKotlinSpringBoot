@@ -16,7 +16,8 @@
 * Consultas com quary personalizadas no repository
 * Cache (em memória) para armazenamento de consultas
     ** O cache normalmente é utilizado somente para dados que dificilmente são alterados pois se armazenarmos um dado em cache que altera frequentemente, corremos o risco de retornar informações incorretas. No caso de um cadastro de produto, normalmente o produto altera muitas vezes, então implementei somente para uso didático.
-* Docker para utilização do banco de dados MySql, configurações no arquivo "docker-compose.yml" 
+* Docker para utilização do banco de dados MySql, configurações no arquivo "docker-compose.yml"
+* Swagger UI para documentação e testes da API 
 ````
 
 ### Execução de testes via POSTMAN
@@ -49,4 +50,12 @@ Comandos úteis utilizados no Docker
 * Stop todos containers: "docker stop $(docker ps -aq)"
 * Remover todos containers: "docker rm $(docker ps -aq)"
 * Remover todas imagens: "docker rmi $(docker images -q)"
+````
+
+## Swagger
+````
+Para acessar o Swagger da aplicação, abra o navegador e digite a URL da API adicionando de "/swagger-ui/index.html" quando a API já estiver de pé rodando normalmente.
+Segue exemplo quando a API é executada na máquina local
+
+ * http://localhost:8080/swagger-ui/index.html 
 ````
