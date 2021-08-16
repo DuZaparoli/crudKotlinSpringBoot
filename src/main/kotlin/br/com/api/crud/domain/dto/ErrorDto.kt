@@ -1,4 +1,4 @@
-package br.com.api.crud.dto
+package br.com.api.crud.domain.dto
 
 import java.time.LocalDateTime
 
